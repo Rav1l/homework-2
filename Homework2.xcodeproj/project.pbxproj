@@ -12,6 +12,7 @@
 		F121AC812A93BA1E005621DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F121AC802A93BA1E005621DF /* Assets.xcassets */; };
 		F121AC842A93BA1E005621DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F121AC832A93BA1E005621DF /* Preview Assets.xcassets */; };
 		F12519A12A9F4B0A0056BC88 /* EpisodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12519A02A9F4B0A0056BC88 /* EpisodeDetail.swift */; };
+		F1306B3E2AA5E86100BCF798 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1306B3D2AA5E86100BCF798 /* ListCell.swift */; };
 		F15AA66D2A9E357A008F6999 /* RickAndMortyApiNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = F15AA66C2A9E357A008F6999 /* RickAndMortyApiNetworking */; };
 		F15AA6702A9E3BBB008F6999 /* RandomAccessColletion+Last.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15AA66F2A9E3BBB008F6999 /* RandomAccessColletion+Last.swift */; };
 		F15AA6722A9E3D70008F6999 /* CharacterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15AA6712A9E3D70008F6999 /* CharacterVM.swift */; };
@@ -33,6 +34,7 @@
 		F121AC802A93BA1E005621DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F121AC832A93BA1E005621DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F12519A02A9F4B0A0056BC88 /* EpisodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetail.swift; sourceTree = "<group>"; };
+		F1306B3D2AA5E86100BCF798 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		F15AA66B2A9E353F008F6999 /* RickAndMortyApiNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RickAndMortyApiNetworking; path = Modules/RickAndMortyApiNetworking; sourceTree = SOURCE_ROOT; };
 		F15AA66F2A9E3BBB008F6999 /* RandomAccessColletion+Last.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RandomAccessColletion+Last.swift"; sourceTree = "<group>"; };
 		F15AA6712A9E3D70008F6999 /* CharacterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterVM.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				F1B2A6D52A94A74400FCEDB6 /* EpisodesScreen.swift */,
 				F15AA6752A9E45F7008F6999 /* EpisodesVM.swift */,
 				F12519A02A9F4B0A0056BC88 /* EpisodeDetail.swift */,
+				F1306B3D2AA5E86100BCF798 /* ListCell.swift */,
 				F121AC802A93BA1E005621DF /* Assets.xcassets */,
 				F121AC822A93BA1E005621DF /* Preview Content */,
 			);
@@ -204,6 +207,7 @@
 				F15AA6742A9E458D008F6999 /* LocationsVM.swift in Sources */,
 				F15F518B2A9A54E600F317DF /* CharacterDetailScreen.swift in Sources */,
 				F121AC7D2A93BA1D005621DF /* Homework2App.swift in Sources */,
+				F1306B3E2AA5E86100BCF798 /* ListCell.swift in Sources */,
 				F15AA6782A9E545D008F6999 /* LocationDetail.swift in Sources */,
 				F12519A12A9F4B0A0056BC88 /* EpisodeDetail.swift in Sources */,
 				F15AA6722A9E3D70008F6999 /* CharacterVM.swift in Sources */,
@@ -342,11 +346,14 @@
 				DEVELOPMENT_TEAM = C53A58UGVG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick and Morty";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,9 +361,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rg.Homework2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -371,11 +381,14 @@
 				DEVELOPMENT_TEAM = C53A58UGVG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick and Morty";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,9 +396,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rg.Homework2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

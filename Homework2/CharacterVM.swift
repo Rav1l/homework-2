@@ -10,13 +10,14 @@ import SwiftUI
 import RickAndMortyApiNetworking
 
 final class CharactersVM: ObservableObject {
-    
+    //Текущая страница, по умолчанию 1
     private var currentPage = 1
     
     @Published var characters = [CharacterModel]()
     @Published var canLoad = true
     @Published var isFinished = false
     
+    //Получение списка персонажей с подкачкой страниц
     func fetch() {
         Task { @MainActor in
             guard canLoad == true else { return }

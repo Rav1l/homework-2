@@ -16,7 +16,8 @@ struct CharacterDetailScreen: View {
     
     let image: String
     let name: String
-    let status: String
+    let status: Status
+    let gender: Gender
     let species: String
     let lastLocationName: String
     let lastLocationID: String
@@ -25,6 +26,7 @@ struct CharacterDetailScreen: View {
     
     var body: some View {
         VStack {
+            BackButton()
             //Загрузка изображения через URL
             AsyncImage(url: URL(string: image)){ image in
                 image.resizable()
@@ -40,9 +42,12 @@ struct CharacterDetailScreen: View {
                 Text(name)
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
+                    .padding()
                 //Статус персонажа
-                Text("\(status) - \(species)")
+                Text("\(status.rawValue) - \(species)")
                     .font(.body)
+                //Гендер персонажа
+                Text("Gender: \(gender.rawValue)")
             }
             .padding()
             //Последня локация, где появляся персонаж

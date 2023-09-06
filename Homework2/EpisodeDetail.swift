@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NavStack
 
 struct EpisodeDetail: View {
     
@@ -15,6 +16,7 @@ struct EpisodeDetail: View {
     
     var body: some View {
         VStack {
+            BackButton()
             Spacer()
             Text(name)
                 .font(.largeTitle)
