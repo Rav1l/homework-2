@@ -68,7 +68,10 @@ public struct PushNavStack<Label, Destination, Tag>: View where Label: View, Des
                 }
             }
             return label.onTapGesture {
-                push()
+                DispatchQueue.main.async {
+                    push()
+                }
+                
             }
         }
 

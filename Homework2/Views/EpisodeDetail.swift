@@ -6,26 +6,40 @@
 //
 
 import SwiftUI
+import RickAndMortyApiNetworking
 import NavStack
+
+struct EpisodeLoadingScreen: View {
+    
+    @Binding var episode: EpisodeModel?
+    
+    var body: some View {
+        if let episode = episode {
+            EpisodeDetail(episode: episode)
+        }
+    }
+}
 
 struct EpisodeDetail: View {
     
-    let name: String
-    let episode: String
-    let airDate: String
+    //MARK: Properties
+    
+    let episode: EpisodeModel
+    
+    //MARK: Views
     
     var body: some View {
         VStack {
             BackButton()
             Spacer()
-            Text(name)
+            Text(episode.name)
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
                 .padding()
-            Text(episode)
+            Text(episode.episode)
             VStack {
                 Text("The air date of the episode:")
-                Text(airDate)
+                Text(episode.airDate)
                     .font(.title)
             }
             .padding()
@@ -33,9 +47,3 @@ struct EpisodeDetail: View {
         }
     }
 }
-
-//struct EpisodeDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EpisodeDetail()
-//    }
-//}

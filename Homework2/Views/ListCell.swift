@@ -16,23 +16,6 @@ public struct ListCell: View {
     let title: String
     
     public var body: some View {
-        
-//                Button {
-//                    withAnimation(.easeOut(duration: 1)) {
-//                        isTap = true
-//                    }
-//                } label: {
-//                    Text(title)
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding([.leading,.trailing], 20)
-//                        .padding([.bottom, .top], 7)
-//
-//                }
-//                .background(colorScheme == .light ? lightBackgruondColor : darkBackgroundColor)
-//                .cornerRadius(10)
-//                .offset(y: isTap ? yPosition2 : yPosition)
-//            }
-//
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(colorScheme == .light ? lightBackgruondColor : darkBackgroundColor)
@@ -42,7 +25,6 @@ public struct ListCell: View {
                     .padding([.top,.bottom], 8)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            
         }
     }
 }

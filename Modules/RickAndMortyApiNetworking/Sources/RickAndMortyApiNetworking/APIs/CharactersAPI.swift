@@ -57,7 +57,7 @@ open class CharactersAPI {
      - returns: CharacterModel
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func getCharacterById(id: Int64) async throws -> CharacterModel {
+    open class func getCharacterById(id: Int) async throws -> CharacterModel {
         return try await getCharacterByIdWithRequestBuilder(id: id).execute().body
     }
 
@@ -67,7 +67,7 @@ open class CharactersAPI {
      - parameter id: (path) The ID of the character 
      - returns: RequestBuilder<CharacterModel> 
      */
-    open class func getCharacterByIdWithRequestBuilder(id: Int64) -> RequestBuilder<CharacterModel> {
+    open class func getCharacterByIdWithRequestBuilder(id: Int) -> RequestBuilder<CharacterModel> {
         var localVariablePath = "/character/{id}"
         let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
         let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -167,7 +167,7 @@ open class CharactersAPI {
      - returns: CharacterModel
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func getMultipleCharactersById(ids: [Int64]) async throws -> CharacterModel {
+    open class func getMultipleCharactersById(ids: [Int]) async throws -> CharacterModel {
         return try await getMultipleCharactersByIdWithRequestBuilder(ids: ids).execute().body
     }
 
@@ -177,7 +177,7 @@ open class CharactersAPI {
      - parameter ids: (path) The IDs of the charactes 
      - returns: RequestBuilder<CharacterModel> 
      */
-    open class func getMultipleCharactersByIdWithRequestBuilder(ids: [Int64]) -> RequestBuilder<CharacterModel> {
+    open class func getMultipleCharactersByIdWithRequestBuilder(ids: [Int]) -> RequestBuilder<CharacterModel> {
         var localVariablePath = "/character/{ids}"
         let idsPreEscape = "\(APIHelper.mapValueToPathItem(ids))"
         let idsPostEscape = idsPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

@@ -6,41 +6,47 @@
 //
 
 import SwiftUI
+import RickAndMortyApiNetworking
 import NavStack
+
+struct LocationLoadingScreen: View {
+    @Binding var location: LocationModel?
+    
+    var body: some View {
+        if let location = location {
+            LocationDetail(location: location)
+        }
+    }
+}
 
 struct LocationDetail: View {
     
-    let name: String
-    let type: String
-    let demnision: String
+    //MARK: Properties
     
+    let location: LocationModel
+    
+    //MARK: Views
     
     var body: some View {
         VStack {
             BackButton()
             Spacer()
-            Text(name)
+            Text(location.name)
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
                 .padding()
             VStack {
                 Text("The type of the location:")
-                Text(type)
+                Text(location.type)
                     .font(.title)
             }
             .padding()
             VStack {
                 Text("The dimension in which the location is located:")
-                Text(demnision)
+                Text(location.dimension)
                     .font(.title)
             }
             Spacer()
         }
     }
 }
-
-//struct LocationDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocationDetail()
-//    }
-//}

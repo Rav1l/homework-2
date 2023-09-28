@@ -28,7 +28,7 @@ struct MainScreen: View {
         }
     }
     
-      public var picker: some View {
+    var picker: some View {
         
         Picker("", selection: $segmentationSelection) {
             ForEach(PickerOptions.allCases, id: \.self) { option in
@@ -39,11 +39,3 @@ struct MainScreen: View {
         .padding(.horizontal)
     }
 }
-
-
-
-//struct MainScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainScreen()
-//    }
-//}

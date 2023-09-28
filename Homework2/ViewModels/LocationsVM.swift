@@ -16,7 +16,13 @@ final class LocationsVM: ObservableObject {
     @Published var locations: [LocationModel] = []
     @Published var canLoad = true
     @Published var isFinished = false
-    @Published var lastLocation: LocationModel = LocationModel(id: 1, name: "", type: "", dimension: "", residents: [""], url: "", created: "")
+    @Published var lastLocation: LocationModel = LocationModel(id: 0,
+                                                               name: "",
+                                                               type: "",
+                                                               dimension: "", 
+                                                               residents: [""],
+                                                               url: "",
+                                                               created: "")
     
     func fetch() {
         Task { @MainActor in
@@ -37,11 +43,11 @@ final class LocationsVM: ObservableObject {
         }
     }
     
-    func fetcById(id: String) {
+    func fetcById(id: String){
         Task { @MainActor in
             do {
                 let result = try await LocationsAPI.getLocationById(id: id)
-                self.lastLocation = result
+                lastLocation = result
             } catch {
                 print("Error : \(error)")
             }
